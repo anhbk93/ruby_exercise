@@ -12,10 +12,10 @@ def increase_product_fee products_list
 	end
 end
 
-
 def print_star
 	puts "***************************************************"
 end
+
 def plus_basic_tax product
 	product.price *= 1.01 
 end
@@ -35,8 +35,6 @@ def print_table_product arr_product
 	arr_product.each { |product| puts product.description }
 end
 
-#main
-
 def get_data_from_file file_name
 	data_rows = IO.readlines(file_name)
 	product_arr = []
@@ -44,6 +42,8 @@ def get_data_from_file file_name
 	product_arr.each { |word| $arr_products << Product.new(word.shift.to_i,word.shift,word.shift.to_i) }
 end
 
+
+#main
 get_data_from_file ("input_products.txt")
 sum_before = count_sum_of_fee($arr_products)
 puts "List of product input :"
@@ -55,7 +55,5 @@ print_table_product $arr_products
 print_star
 sum_after = count_sum_of_fee $new_arr_products
 sum_tax = sum_after - sum_before
-
-
-puts "Sum of tax: #{sum_tax}"
-puts "Sum of fee: #{sum_after}"
+puts "Sum of tax: $#{sum_tax.round(2)}"
+puts "Sum of fee: $#{sum_after.round(2)}"
