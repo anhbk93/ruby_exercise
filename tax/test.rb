@@ -31,8 +31,8 @@ def count_sum_of_fee products_list
 end
 
 def print_table_product arr_product
-	print "Number\tProduct\t\t\t\t\tPrice\n"
-	arr_product.each { |product| puts product.description }
+	print "Number\t\t\t\tProduct\t\tPrice\n"
+	arr_product.each { |product| puts product.description_v1 }
 end
 
 def get_data_from_file file_name

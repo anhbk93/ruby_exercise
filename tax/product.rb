@@ -19,6 +19,10 @@ class Product
 		"#{@amount}\t\t#{@name}\t\t\t\t\t$#{@price}\n"
 	end
 
+	def description_v1
+		sprintf('%5d %20s %8d',@amount,@name,@price)
+	end
+
 	def round
 		self.price = self.price.round(2) 
 		self
@@ -26,4 +30,4 @@ class Product
 
 end
 
-# print Product.new(2,"Sex toy",20).description
+# puts Product.new(2,"Sex toy",20).description_v1
