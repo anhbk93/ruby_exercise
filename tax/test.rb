@@ -17,11 +17,11 @@ def print_star
 end
 
 def plus_basic_tax product
-	product.price *= 1.01 
+	product.price *= 1.1 
 end
 
 def plus_import_tax product
-	product.price *= 1.005
+	product.price *= 1.05
 end
 
 def count_sum_of_fee products_list
